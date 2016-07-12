@@ -1,0 +1,21 @@
+<h1>All the Artists</h1>
+<%= link_to "Add an Artist", artists_new_path, { :class => "button waves-effect waves-light btn" } %>
+<br><br>
+
+<table class="striped bordered">
+  <tr>
+    <th>Artist</th>
+    <th>Image</th>
+    <th>Albums</th>
+    <th>Hometown</th>
+  </tr>
+
+  <% @artists.each do |artist| %>
+      <tr>
+        <td><%= link_to artist.name, artist_path(artist.id) %></td>
+        <td><%= image_tag(artist.img, size: "100x100", alt: "Artist Image") %></td>
+        <td><%= artist.albums %></td>
+        <td><%= artist.hometown %></td>
+      </tr>
+  <% end %>
+</table>
