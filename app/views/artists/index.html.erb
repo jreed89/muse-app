@@ -8,6 +8,7 @@
     <th>Image</th>
     <th>Albums</th>
     <th>Hometown</th>
+    <th>Edit</th>
   </tr>
 
   <% @artists.each do |artist| %>
@@ -16,6 +17,10 @@
         <td><%= image_tag(artist.img, size: "100x100", alt: "Artist Image") %></td>
         <td><%= artist.albums %></td>
         <td><%= artist.hometown %></td>
+        <td><a class="btn-floating btn-large red" href="<%= artist_edit_path(artist) %>" >
+                    <i class="large material-icons">mode_edit</i>
+                </a>
+          </td>
       </tr>
   <% end %>
 </table>
