@@ -11,4 +11,10 @@ class ArtistsController < ApplicationController
 	def new
   		@artist = Artist.new
 	end
+
+	def create
+  		@artist = Artist.new(params.require(:artist).permit(:name, :albums, :hometown, :img))
+  		@artist.save
+  		redirect_to artists_path
+	end
 end
