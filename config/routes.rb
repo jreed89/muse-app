@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-root to: "application#about"
+root to: "artists#index"
 
 get "about", to: "application#about"
 
@@ -11,4 +11,7 @@ post "artists", to: "artists#create"
 get "artists/:id/edit", to: "artists#edit", as: :artist_edit
 patch "artists/:id", to: "artists#update"
 delete "artists/:id", to: "artists#destroy"
+get "songs/new", to: "songs#new"
+post "songs", to: "songs#create"
+
 end
